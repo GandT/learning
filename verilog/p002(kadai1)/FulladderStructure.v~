@@ -1,0 +1,17 @@
+module FullAdderStructure(x, y, cin, cout, s);
+   //入力と出力の分類を行う
+   input x, y, cin;
+   output cout, s;
+   //ワイヤー宣言
+   wire   w1, w2, w3, w4, w5;
+
+   //論理回路構成
+   and a1(w1, x, y);
+   and a2(w2, y, cin);
+   and a3(w3, cin, x);
+   or o1(w4, w1, w2);
+   or o2
+     //途中
+   
+   
+endmodule

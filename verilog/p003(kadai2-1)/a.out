@@ -1,0 +1,68 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0xf803f0 .scope module, "testsub4" "testsub4" 2 1;
+ .timescale 0 0;
+v0xf903e0_0 .var "a", 3 0;
+v0xf90480_0 .var "b", 3 0;
+v0xf90530_0 .net "s", 4 0, L_0xf90910; 1 drivers
+S_0xf804e0 .scope module, "sub" "sub4" 2 14, 3 1, S_0xf803f0;
+ .timescale 0 0;
+v0xf5b870_0 .net *"_s0", 4 0, L_0xf905e0; 1 drivers
+v0xf8ffd0_0 .net *"_s3", 0 0, C4<0>; 1 drivers
+v0xf90070_0 .net *"_s4", 4 0, L_0xf90790; 1 drivers
+v0xf90110_0 .net *"_s7", 0 0, C4<0>; 1 drivers
+v0xf901c0_0 .net "a", 3 0, v0xf903e0_0; 1 drivers
+v0xf90260_0 .net "b", 3 0, v0xf90480_0; 1 drivers
+v0xf90340_0 .alias "s", 4 0, v0xf90530_0;
+L_0xf905e0 .concat [ 4 1 0 0], v0xf903e0_0, C4<0>;
+L_0xf90790 .concat [ 4 1 0 0], v0xf90480_0, C4<0>;
+L_0xf90910 .arith/sub 5, L_0xf905e0, L_0xf90790;
+    .scope S_0xf803f0;
+T_0 ;
+    %vpi_call 2 5 "$monitor", "%t %b + %b = %b", $time, v0xf903e0_0, v0xf90480_0, v0xf90530_0;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xf903e0_0, 0, 0;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xf90480_0, 0, 0;
+    %delay 40, 0;
+    %movi 8, 1, 4;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xf903e0_0, 0, 8;
+    %movi 8, 3, 4;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xf90480_0, 0, 8;
+    %delay 40, 0;
+    %movi 8, 4, 4;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xf903e0_0, 0, 8;
+    %movi 8, 8, 4;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xf90480_0, 0, 8;
+    %delay 40, 0;
+    %vpi_func 2 9 "$random", 8, 32;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xf903e0_0, 0, 8;
+    %vpi_func 2 9 "$random", 8, 32;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xf90480_0, 0, 8;
+    %delay 40, 0;
+    %vpi_func 2 10 "$random", 8, 32;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xf903e0_0, 0, 8;
+    %vpi_func 2 10 "$random", 8, 32;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xf90480_0, 0, 8;
+    %delay 40, 0;
+    %vpi_call 2 12 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testsub41.v";
+    "sub4.v";
