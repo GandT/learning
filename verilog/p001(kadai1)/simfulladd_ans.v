@@ -1,3 +1,9 @@
+/*
+  2016.4.15
+  「全加算器 テストベンチ」
+  参考文献：池田誠(2016)「Hardware design 2016」<http://www.mos.t.u-tokyo.ac.jp/~ikeda/HWDesign/>
+*/
+
 module testfulladd;
    //入力レジスタと出力ワイヤーを宣言
    wire s, co;

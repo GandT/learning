@@ -21,6 +21,6 @@ module testfulladd;
    end
 
    //全加算器論理の実行
-   FullAdderFunction f1(a,b,ci,co,s);
+   FullAdderStructure f1(a,b,ci,co,s);
 
 endmodule
