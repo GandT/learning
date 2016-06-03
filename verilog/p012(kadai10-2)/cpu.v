@@ -14,7 +14,7 @@ module CPU(CK,RST,IA,ID,DA,DD,RW);
 	reg [15:0] 	 RF[0:14];	//15個のレジスタファイル
 	reg [1:0] 	 STAGE;		//フェッチ(0)→デコード(1)→実行(2)→格納(3)　の各ステージ
 	reg 		 FLAG,RW;	//条件分岐用ジャンプフラグ / 入力・出力判定
-	wire [15:0]　　ABUS, BBUS, CBUS;					//入力バス① / 入力バス② / 出力バス
+	wire [15:0]  ABUS, BBUS, CBUS;					//入力バス① / 入力バス② / 出力バス
 	wire [3:0] 	 OPCODE, OPR1, OPR2, OPR3;			//オペコード / 第一オペランド / 第二オペランド / 第三オペランド 
 	wire [7:0] 	 IMM;		//即値
 	wire [15:0]  PCn;		//次回プログラムカウンタ
@@ -92,11 +92,11 @@ module CPU(CK,RST,IA,ID,DA,DD,RW);
 			end else if( OPCODE[3:1] == 'b 101 ) begin
 				//ストア
 				if( OPCODE[0] == 0 ) begin
-					RW <= 0;		//レジスタ読み出しモード
+					RW <= 0;		//データバス書き出しモード
 					DD <= LSUA;
 				//ロード
 				end else begin
-					RW <= 1;		//レジスタ書き込みモード
+					RW <= 1;		//データバス読み出しモード
 					LSUC <= DD;
 				end
 			//無条件ジャンプ
@@ -110,11 +110,22 @@ module CPU(CK,RST,IA,ID,DA,DD,RW);
 			RW <= 1;				//レジスタ書き込みモード
 			//算術演算
 			if( OPCODE[3] == 0 ) begin
-				//if( CBUS == 0 ) FLAG <= 1;
-				//else FLAG <= 0;
 				CBUS <= FUC;
+				if( CBUS == 0 ) FLAG <= 1;	//jz命令の設定
+				else FLAG <= 0;				//jz命令の解除
 			end
-			if( OPCODE[3:1] == b'101 )CBUS <= LSUC;
+			//ロード・ストア
+			else if( OPCODE[3:1] == 'b 101 )CBUS <= LSUC;
+			//下位ビットセット出力
+			else if( OPCODE[3:0] == 'b 1100)CBUS <= {8'b 0,IMM};
+			//無条件ジャンプ
+			else if( OPCODE[3:0] == 'b 1000)CBUS <= PCC;
+
+			//レジスタ操作
+			RF[OPR1] <= CBUS;
+
+			//プログラムカウンタ操作
+			PC <= PCI;
 
 			//状態遷移
 			STAGE <= 0;
