@@ -1,0 +1,1 @@
+#include <iostream>using namespace std;int main(){	//最初にもらう数	int a,b;	cin >> a;	cin >> b;		//互除法	while(a != b)	{		if(a > b){			//aを減らす			a -= b;					}else if(a < b){			//bを減らす			b -= a;		}	}		//出力	cout << a << endl;}

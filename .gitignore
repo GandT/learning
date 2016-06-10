@@ -1,3 +1,4 @@
 *.txt~
 *.v~
 /verilog/lec/
+*.out
