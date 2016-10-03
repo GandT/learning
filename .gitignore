@@ -1,3 +1,13 @@
 *~
 /verilog/lec/
 *.out
+*.exe
+
+bin
+obj
+Properties
+*.obj
+*.pdb
+*.sdf
+*.suo
+*.user
