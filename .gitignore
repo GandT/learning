@@ -1,6 +1,6 @@
 *~
 *.BAK
-/verilog/lec/
+/VerilogHDL/lec/
 *.out
 *.exe
 
