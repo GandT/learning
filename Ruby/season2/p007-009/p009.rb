@@ -20,6 +20,15 @@ def main()
     sarray[i] = (1000-i).to_s;
   end
   p sarray
+
+  # eachで取り出したもの中身
+  i = 0
+  sarray.each do |s|
+    s = (i*10).to_s
+    puts s
+    puts sarray[i]
+    i = i+1
+  end
 end
 
 
