@@ -1,17 +1,16 @@
 C言語を学習した当初からの全プログラミング学習履歴を公開する予定です。
 言語ごとにフォルダ分けされています。
 
-・C/C++
+- C/C++
 
-・Ruby
+- Ruby
 
-・Perl
+- Perl
 
-・Verilog HDL
+- Verilog HDL
 
-・C#
+- C#
 
-・Unity
-　→ファイルサイズが大きいので更新中止
+- Unity
 
-・OCaml
+- OCaml
