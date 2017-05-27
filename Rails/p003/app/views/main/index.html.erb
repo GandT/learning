@@ -1,0 +1,44 @@
+<h1><%= @title %></h1>
+<p><%= @text %></p>
+<p><%= @gemversion %></p>
+<br>
+
+<!-- 
+    【普通のやり方（CSRF対策で止められる）】
+    <form method="POST" actopm="/main/index">
+        <input type="text" name="input1" value="<%= @value %>">
+        <input type="submit">
+    </form>
+-->
+<!-- Railsフォーム -->
+<%= form_tag(controller: "main", action: "index") do %>
+    <!-- テキストボックス -->
+    <p><%= @formstate %></p>
+    <p><%= @formtext %></p>
+    <%= text_field_tag("input1") %>
+
+    <!-- チェックボックス -->
+    <p><%= @checktext %></p>
+    <%= check_box_tag("check1") %>
+    <%= label_tag("chekc1", "どう？") %>
+
+    <!-- ラジオボタン -->
+    <p><%= @radiotext %></p>
+    <%= radio_button_tag("r1", "radio 1") %>
+    <%= label_tag("r1_radio_1", "第一の砦") %>
+    <%= radio_button_tag("r2", "radio 2") %>
+    <%= label_tag("r2_radio_2", "第二の砦") %>
+
+    <!-- 選択リスト -->
+    <p><%= @sltxt %></p>
+    <%= select_tag('s1', options_for_select(["桃", "栗", "柿", "鮑"])) %>
+
+    <!-- 複数選択リスト -->
+    <p><%= @msltxt %></p>
+    <%= select_tag('s2', 
+        options_for_select(["半", "官", "判", "民"]),
+        {size:5, multiple:true}) %>
+
+    <br>
+    <%= submit_tag("責任を取る") %>
+<% end %>
