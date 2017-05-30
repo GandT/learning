@@ -1,0 +1,22 @@
+<h1>人々のやつ</h1>
+<p><%= @msg %></p>
+
+<!-- preって何ですかね -->
+<pre>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>名前</th>
+        <th>年齢</th>
+        <th>メールアドレス</th>
+    </tr>
+    <% @data.each do |obj| %>
+        <tr>
+        <td><%= obj.id %></td>
+        <td><%= obj.name %></td>
+        <td><%= obj.age %></td>
+        <td><%= obj.mail %></td>
+        </tr>
+    <% end %>
+</table>
+</pre>

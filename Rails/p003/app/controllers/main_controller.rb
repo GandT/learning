@@ -4,6 +4,10 @@ class MainController < ApplicationController
 
     # 空のindexを作っておく
     def index
+        # ヘッダー/フッター
+        @header = 'ダイナミックとうもろこし田楽'
+        @footer = '主地も血も千, You kill me 財閥.'
+
         # リダイレクトかどうかアドレスで判断
         if params['red'] == nil
             @title = "試験空間"

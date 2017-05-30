@@ -1,0 +1,41 @@
+<!-- 入力欄 -->
+<table class="form">
+<%= form_tag(controller: "bbs", action: "index") do %>
+    <tr>
+        <td>名前：</td>
+        <td><%= text_field_tag("name") %></td>
+    </tr>
+    <tr>
+        <td>mail：</td>
+        <td><%= text_field_tag("mail") %></td>
+    </tr>
+    <tr>
+        <td>発言：</td>
+        <td><%= text_area_tag("text", "", size: "50x4") %></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><%= submit_tag("投稿") %></td>
+    </tr>
+
+<% end %>
+</table>
+
+<!-- 表示欄 -->
+<table class="bbs">
+    <tr>
+        <th style="width: 50%">発言</th>
+        <th>名前</th>
+        <th>mail</th>
+        <th>投稿日時</th>
+    </tr>
+    
+    <% @bbs_data.each do |key, obj| %>
+        <tr>
+        <td class="text"><%= obj["text"] %></td>
+        <td class="name"><%= obj["name"] %></td>
+        <td class="mail"><%= obj["mail"] %></td>
+        <td class="time"><%= Time.at(key.to_i) %></td>
+        </tr>
+    <% end %>
+</table>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<!--
+「ぜんぜんわからない」
+「俺たちは雰囲気でhtmlをやっている」
+-->
+
+<html>
+
+<head>
+    <title><%= @title %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <%= render template: 'layouts/main_header' %>
+
+    <!-- 本体 -->
+    <%= yield %>
+
+    <!-- ?????? -->
+    <div></div>
+    <hr size="1" color="#aaa">
+
+    <!-- フッター -->
+    <%= render template: 'layouts/main_footer' %>
+</body>
+
+</html>

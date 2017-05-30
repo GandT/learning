@@ -2,13 +2,19 @@
 <html>
   <head>
     <title>P003</title>
+
+    <!-- CSRF対策のメタタグ -->
     <%= csrf_meta_tags %>
 
+    <!-- Stylesheet読み込みのリンクタグを出力（gemfileに「gem 'coffee-script-source', '1.8.0'」がないとエラーが出る） -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Javascriptのロードタグを自動生成 -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <!-- ページコンテンツの出力 -->
     <%= yield %>
   </body>
 </html>
