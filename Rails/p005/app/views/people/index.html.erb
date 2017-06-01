@@ -7,16 +7,25 @@
     <tr>
         <th>ID</th>
         <th>名前</th>
-        <th>年齢</th>
-        <th>メールアドレス</th>
+        <th colspan="2"></th>
     </tr>
     <% @data.each do |obj| %>
         <tr>
         <td><%= obj.id %></td>
-        <td><%= obj.name %></td>
-        <td><%= obj.age %></td>
-        <td><%= obj.mail %></td>
+        <td><a href="/people/<%= obj.id %>"><%= obj.name %></a></td>
+        <td><a href="/people/edit/<%= obj.id %>">編集</a></td>
+        <td><a href="javascript:delData(<%= obj.id %>);">削除</a></td>
         </tr>
     <% end %>
 </table>
 </pre>
+
+<script>
+// 削除確認のボックスを表示
+function delData(num){
+    if(confirm('このデータを削除しますか？')){
+        document.location = "/people/delete/" + num;
+    }
+    return false;
+}
+</script>

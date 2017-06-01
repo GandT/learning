@@ -1,0 +1,23 @@
+<h1>人の編集</h1>
+<p><%= @msg %></p>
+
+<table>
+    <%= form_for(@person, url:{controller: 'people', action: 'update', id: @person.id}) do |form| %>
+    <tr>
+        <th>名前</th>
+        <td><%= form.text_field :name %></td>
+    </tr>
+    <tr>
+        <th>年齢</th>
+        <td><%= form.text_field :age %></td>
+    </tr>
+    <tr>
+        <th>メールアドレス</th>
+        <td><%= form.text_field :mail %></td>
+    </tr>
+    <tr>
+        <th></th>
+        <td><%= form.submit "送信" %></td>
+    </tr>
+    <% end %>
+</table>
