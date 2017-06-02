@@ -1,0 +1,25 @@
+<h1>発言のやつ</h1>
+<p><%= @msg %></p>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <td><%= @message.id %></td>
+    </tr>
+    <tr>
+        <th>発言者</th>
+        <td><%= @message.person_id %></td>
+    </tr>
+    <tr>
+        <th>タイトル</th>
+        <td><%= @message.title %></td>
+    </tr>
+    <tr>
+        <th>発言</th>
+        <td><%= @message.message %></td>
+    </tr>
+    <tr>
+        <th>投稿日時</th>
+        <td><%= @message.created_at %></td>
+    </tr>
+</table>

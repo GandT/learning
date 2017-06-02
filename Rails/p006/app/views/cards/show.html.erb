@@ -1,0 +1,31 @@
+<h1>読書カード＃詳細情報</h1>
+<p>『<%= @card.title %>』に関するデータ</p>
+
+<table>
+    <tr>
+        <th width="100pt">ID</th>
+        <td><%= @card.id %></td>
+    </tr>
+    <tr>
+        <th>題名</th>
+        <td><%= @card.title %></td>
+    </tr>
+    <tr>
+        <th>著者</th>
+        <td><%= @card.author %></td>
+    </tr>
+    <tr>
+        <th>出版社</th>
+        <td><%= @card.publisher %></td>
+    </tr>
+    <tr>
+        <th>評価</th>
+        <td><%= @card.star.times{"★"} %></td>
+    </tr>
+    <tr>
+        <th>コメント</th>
+        <td><%= @card.memo %></td>
+    </tr>
+</table>
+
+<p class="link"><a href="/cards">&lt; &lt; トップページに戻る</a></p>

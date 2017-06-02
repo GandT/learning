@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170602033150) do
+ActiveRecord::Schema.define(version: 20170602101532) do
 
-  create_table "cards", force: :cascade do |t|
+  create_table "messages", force: :cascade do |t|
+    t.integer "person_id"
     t.text "title"
-    t.text "author"
-    t.text "publisher"
-    t.integer "star"
-    t.text "memo"
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

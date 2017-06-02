@@ -1,0 +1,26 @@
+<h1>読書カード＃タイトル</h1>
+<p>現在登録されているデータの一覧です。</p>
+
+<table width="100%">
+    <!-- 表題 -->
+    <tr>
+        <th>ID</th>
+        <th>題名</th>
+        <th>著者</th>
+        <th colspan="2"></th>
+    </tr>
+
+    <!-- データ読み出し -->
+    <% @cards.each do |o| %>
+    <tr>
+        <!--　ＩＤ　--><td width="35px"><%= o.id %></td>
+        <!--　題名　--><td width="50%"><a href="/cards/<%=o.id%>"><%= o.title %></a></td>
+        <!-- 著者名 --><td><%= o.author %></td>
+        <!--　編集　--><td width="40px"><a href="/cards/edit/<%=o.id%>">編集</a></td>
+        <!--　削除　--><td width="40px"><a href="javascript:window.delData(<%= (o.id.to_s + ",'" + o.title.to_s).html_safe %>');">削除</a></td>
+    </tr>
+    <% end %>
+</table>
+
+<!-- 追加 -->
+<p class="link"><a href="/cards/add">新しいデータを入力 &gt;&gt;</a></p>
