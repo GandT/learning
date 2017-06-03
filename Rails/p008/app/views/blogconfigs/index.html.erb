@@ -1,0 +1,19 @@
+<h1>ブログ設定</h1>
+<p>ブログの基本情報です。</p>
+
+<table>
+    <tr>
+        <th>ブログ名</th>
+        <td><%= @blogconfig.title %></td>
+    </tr>
+    <tr>
+        <th>簡易説明文</th>
+        <td><%= @blogconfig.subtitle %></td>
+    </tr>
+    <tr>
+        <th>スタイル</th>
+        <td><%= @blogconfig.stylename %></td>
+    </tr>
+</table>
+
+<p><a href="/blogconfigs/edit">編集＞＞</a></p>

@@ -1,0 +1,21 @@
+<h1>ジャンル一覧</h1>
+<p>ブログに設定されたジャンルの一覧です。</p>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>ジャンル名</th>
+        <th>コメント</th>
+        <th></th>
+    </tr>
+    <% @data.each do |obj| %>
+    <tr>
+        <td><%= obj.id %></td>
+        <td><%= obj.name %></td>
+        <td><%= obj.memo %></td>
+        <td><a href="/bloggenres/<%= obj.id %>">編集</a></td>
+    </tr>
+    <% end %>
+</table>
+
+<p><a href="/bloggenres/add">新規作成＞＞</a></p>

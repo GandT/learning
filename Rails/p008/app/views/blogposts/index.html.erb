@@ -1,0 +1,24 @@
+<h1>投稿一覧</h1>
+<p>投稿したブログ記事の一覧です。</p>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>導入</th>
+        <th>ジャンル</th>
+        <th colspan="2"></th>
+    </tr>
+    <% @data.each do |obj| %>
+    <tr>
+        <td><%= obj.id %></td>
+        <td><%= obj.title %></td>
+        <td><%= obj.read %></td>
+        <td><%= obj.bloggenre.name %></td>
+        <td><a href="/blogposts/<%= obj.id %>">編集</a></td>
+        <td><a href="/blogposts/delete/<%= obj.id %>">削除</a></td>
+    </tr>
+    <% end %>
+</table>
+
+<p><a href="/blogposts/add">新規作成＞＞</a></p>

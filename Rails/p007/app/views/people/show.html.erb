@@ -1,7 +1,6 @@
 <h1>人のやつ</h1>
 <p><%= @msg %></p>
 
-<pre>
 <table>
     <tr>
         <th>ID</th>
@@ -19,5 +18,14 @@
         <th>メールアドレス</th>
         <td><%= @data.mail %></td>
     </tr>
+    <tr>
+        <th>発言</th>
+        <td>
+        <% if @data.message != nil %>
+            <% @data.message.each do |o| %>
+                <%= ('- ' + o.title + '<br>').html_safe %>
+            <% end %>
+        <% end %>
+        </td>
+    </tr>
 </table>
-</pre>

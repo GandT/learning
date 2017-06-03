@@ -1,0 +1,32 @@
+<h1>ブログ設定の編集</h1>
+<p>ブログの基本情報を編集します。</p>
+
+<!-- エラーメッセージ -->
+<% if @blogconfig.errors.any? %>
+    <ul>
+    <% @blogcongig.errors.full_messages.each do |err| %>
+        <li><%= err %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<table>
+    <%= form_for(@blogconfig, url:{controller:"blogconfigs", action:"edit"}) do |form| %>
+    <tr>
+        <th>ブログ名</th>
+        <td><%= form.text_field :title %></td>
+    </tr>
+    <tr>
+        <th>簡易説明文</th>
+        <td><%= form.text_field :subtitle %></td>
+    </tr>
+    <tr>
+        <th>スタイル</th>
+        <td><%= form.text_field :stylename %></td>
+    </tr>
+    <tr>
+        <th></th>
+        <td><%= form.submit "送信" %></td>
+    </tr>
+    <% end %>
+</table>

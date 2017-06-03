@@ -1,0 +1,28 @@
+<h1>ジャンル追加</h1>
+<p>新しいジャンルを追加します。</p>
+
+<!-- エラーメッセージ -->
+<% if @bloggenre.errors.any? %>
+    <ul>
+    <% @bloggenre.errors.full_messages.each do |err| %>
+        <li><%= err %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<table>
+    <%= form_for(@bloggenre, url:{controller:"bloggenres", action:"add"}) do |form| %>
+    <tr>
+        <th>ジャンル名</th>
+        <td><%= form.text_field :name %></td>
+    </tr>
+    <tr>
+        <th>コメント</th>
+        <td><%= form.text_field :memo %></td>
+    </tr>
+   <tr>
+        <th></th>
+        <td><%= form.submit "送信" %></td>
+    </tr>
+    <% end %>
+</table>
