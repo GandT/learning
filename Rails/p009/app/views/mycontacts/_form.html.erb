@@ -1,0 +1,38 @@
+<%= form_with(model: mycontact, local: true) do |form| %>
+  <% if mycontact.errors.any? %>
+    <div id="error_explanation">
+      <!-- 個数に応じて「error」を複数形にして表示 -->
+      <h2><%= pluralize(mycontact.errors.count, "error") %> prohibited this mycontact from being saved:</h2>
+
+      <ul>
+      <% mycontact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name, id: :mycontact_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age, id: :mycontact_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nationality %>
+    <%= form.check_box :nationality, id: :mycontact_nationality %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mail %>
+    <%= form.text_area :mail, id: :mycontact_mail %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
