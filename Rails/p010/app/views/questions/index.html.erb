@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>トルネード一門Ｑ＆Ａ掲示板</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>受付状態</th>
+      <!--
+      <th colspan="3"></th>
+      -->
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.title %></td>
+        <td><%= question.finished ? "終了" : "受付中" %></td>
+        <td><%= link_to '閲覧', question %></td>
+        <!--
+        <td><%= link_to '編集', edit_question_path(question) %></td>
+        <td><%= link_to '削除', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Qの投稿', new_question_path %>

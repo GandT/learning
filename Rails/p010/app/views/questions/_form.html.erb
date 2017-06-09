@@ -1,0 +1,44 @@
+<%= form_with(model: question, local: true) do |form| %>
+  <% if question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(question.errors.count, "error") %> を直さないと何をやってもダメです。</h2>
+
+      <ul>
+      <% question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- タイトル -->
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <!-- 本文 -->
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, cols:40, rows:10 %>
+  </div>
+
+  <!-- 投稿者名 -->
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <!-- 完了状態 -->
+  <!--
+  <div class="field">
+    <%= form.label :finished %>
+    <%= form.check_box :finished, id: :question_finished %>
+  </div>
+  -->
+  <%= f.hidden_field :finished, {value:false} %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

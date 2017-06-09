@@ -1,0 +1,58 @@
+// Place all the styles related to the questions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// p004のbbs.scssからコピペしてきました。内容は知りません。
+
+h1.title{
+    font-size: 20pt;
+    color: #999
+}
+
+.form{
+    margin: 50px 1px;
+}
+
+.form tr td{
+    color: #999;
+    padding: 0px 10px;
+    font-size: 14pt;
+}
+
+th{
+    background-color: #999;
+    color: #eee;
+    font-size: 14pt;
+    padding: 2px;
+}
+
+.bbs tr td{
+    background-color: #eee;
+    color: #666;
+    padding: 10px 5px;
+}
+
+td.text{
+    font-size: 12px;
+}
+td.name{
+    font-size: 12px;
+}
+td.mail{
+    font-size: 12px;
+}
+td.time{
+    font-size: 9px;
+}
+
+div.footer{
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    border-color: #999;
+    margin: 50px 0px 0px 0px;
+    padding: 3px 0px 0px 0px;
+    font-color: #999;
+    font-size: 12pt;
+    font-align: right;
+    font-size: 9pt;
+}

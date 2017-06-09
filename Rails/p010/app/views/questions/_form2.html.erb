@@ -1,0 +1,30 @@
+<%= form_for(answer) do |f| %>
+
+    <!-- エラー処理 -->
+    <% if answer.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(answer.errors.count, "error") %> を直さないと何をやってもダメです。</h2>
+        <ul>
+        <% anser.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+        </ul>
+    </div>
+    <% end %>
+
+    <!-- question_idのセット -->
+    <%= f.hidden_field :question_id, {value: answer.question_id} %>
+
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <div class="field">
+        <%= f.label :content %>
+        <%= f.text_area :content, cols:40, rows:5 %>
+    </div>
+    <br>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>
