@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @questionary.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @questionary.description %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @questionary.deadline %>
+</p>
+
+<%= link_to 'Edit', edit_questionary_path(@questionary) %> |
+<%= link_to 'Back', questionaries_path %>

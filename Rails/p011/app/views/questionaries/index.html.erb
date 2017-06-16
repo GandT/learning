@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>トルネード一門わくわくアンケート教室</h1>
+
+<table>
+  <!-- 一行目 -->
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>期間</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <!-- 二行目以降 -->
+  <tbody>
+    <!--保存時にutc認識にできないんでしょうかね-->
+    <% dx = 60*60*9  # 時差調整項 %>
+    <% @questionaries.each do |questionary| %>
+      <tr>
+        <!--タイトル-->
+        <td><%= questionary.title %></td>
+        <!--期間-->
+        <td><%= "残り" + (questionary.deadline-DateTime.now-dx)/(60*60*24).to_i.to_s + "日" %>
+        <!--状態表示-->
+        <% if questionary.deadline - dx > DataTime.now%>
+          <span class="not_finished">受付中</span>
+          </td>
+          <td><%= link_to '詳細表示', questionary %></td>
+        <% else %>
+          <span class="finished">終了</span>
+          <td></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新たなるアンケートの生成 ', new_questionary_path %>
