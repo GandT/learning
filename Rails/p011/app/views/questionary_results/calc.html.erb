@@ -1,0 +1,23 @@
+<h1><%= @questionary.title %> の集計</h1>
+
+<p>
+【読み方】
+第1列は無選択の人数
+以後第1選択肢、第2選択肢、……の順
+第1列にしか数値がないものは何も選択されていないことを意味する。
+</p>
+
+<table>
+    <tr>
+        <th>質問ID</th>
+        <th>集計結果</th>
+
+        <td>
+        <table><tr>
+            <% for v in vl %>
+                <td><%= v.to_i %></td>
+            <% end %>
+        </tr></table>
+        </td>
+    </tr>
+</table>
