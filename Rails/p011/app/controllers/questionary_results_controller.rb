@@ -4,12 +4,14 @@ class QuestionaryResultsController < ApplicationController
   # GET /questionary_results
   # GET /questionary_results.json
   def index
-    @questionary_results = QuestionaryResult.all
+    @questionaries = Questionary.all
   end
 
   # GET /questionary_results/1
   # GET /questionary_results/1.json
   def show
+    @questionary = Questionary.find params[:id]
+    @questionary_result = QuestionaryResult.where('questionary_id = ?', params[:id])
   end
 
   # GET /questionary_results/new
@@ -58,6 +60,33 @@ class QuestionaryResultsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to questionary_results_url, notice: 'Questionary result was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  # アンケート集計
+  def calc
+    @questionary = Questionary.find params[:id]
+
+    results = QuestionaryResult.where('questionary_id = ?', params[:id])
+    @calc = {}
+
+    results.each do |result|
+      # コンマ区切り
+      data = result.result.split ','
+
+      data.each do |value|
+        # コロン区切り
+        keyval = result.result.split ':'
+        ky = keyval[0].to_s
+        vl = keyval[1].to_i
+
+        if ky != 'question_id'
+          if @calc[ky] == nil
+            calc[ky] = []
+          end
+          @calc[ky][vl] = (@calc[ky][vl] == nil) ? 1 : @calc[ky][vl].to_i+1
+        end
+      end
     end
   end
 

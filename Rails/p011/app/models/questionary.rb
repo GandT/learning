@@ -5,6 +5,6 @@ class Questionary < ApplicationRecord
 
     # 全データが存在することが必要
     validates :title, :description, :deadline, presence: {
-        message: 
+        message: 'の存在が要請されています。'
     }
 end

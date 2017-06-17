@@ -12,6 +12,32 @@ class QuestionariesController < ApplicationController
   def show
   end
 
+
+  # フォームの送信
+  def sendform
+    # 変数設定
+    id = params[:id]
+    result = 'question_id:' + id
+
+    100.times{ |i|
+      # ラジオボタン情報をテキスト化して保存
+      str = "r" + (i+1).to_s
+      if params[str] == nil
+        result += "," + str + ":0"
+      else
+        result += "," + str + ":" + params[str]
+      end
+    }
+
+    # 結果の設定
+    obj = QuestionaryResult.new
+    obj.questionary_id = id
+    obj.result = result
+    obj.save!
+    redirect_to '/questionaries'
+  end
+
+
   # GET /questionaries/new
   def new
     @questionary = Questionary.new

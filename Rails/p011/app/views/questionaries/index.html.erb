@@ -21,9 +21,9 @@
         <!--タイトル-->
         <td><%= questionary.title %></td>
         <!--期間-->
-        <td><%= "残り" + (questionary.deadline-DateTime.now-dx)/(60*60*24).to_i.to_s + "日" %>
+        <td><%= "残り" + ((questionary.deadline-DateTime.now-dx)/(60*60*24)).to_i.to_s + "日" %>
         <!--状態表示-->
-        <% if questionary.deadline - dx > DataTime.now%>
+        <% if questionary.deadline - dx > DateTime.now %>
           <span class="not_finished">受付中</span>
           </td>
           <td><%= link_to '詳細表示', questionary %></td>

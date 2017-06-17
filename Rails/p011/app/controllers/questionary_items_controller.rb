@@ -17,7 +17,7 @@ class QuestionaryItemsController < ApplicationController
     @questionary_item = QuestionaryItem.new
     # 基本情報のセット
     @questionary_item.questionary_id = params[:id]
-    @Questionary = Questionary.find(params[:id])
+    @questionary = Questionary.find(params[:id])
   end
 
   # GET /questionary_items/1/edit
