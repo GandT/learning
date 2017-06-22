@@ -1,0 +1,25 @@
+/* ユニバーサルセレクタ */
+*{
+    background-color: skyblue;
+}
+
+/* 要素 */
+h1{
+    color: orange;
+}
+
+
+/* id */
+#chara{
+    color: red;
+}
+/* 
+    どうやらid優先な模様（順番関係なく）
+    仕様として本当にそうなのかといわれると何とも言えないところはある
+*/
+
+
+/* クラス */
+.variable{
+    color: rebeccapurple;
+}

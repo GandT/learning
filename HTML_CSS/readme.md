@@ -19,6 +19,19 @@
     * フォーム
 - p010
     * 文字参照
+- p011
+    * CSSの読み込み方
+- p012
+    * セレクタの基礎
+- p013
+    * 複雑なセレクタ選択
+- p014
+    * 属性セレクタ
+- p015
+    * 疑似クラス
+ 
+
  
 # 【参考文献】
-- 百式管理人(2015)「ドットインストール」,<http://dotinstall.com/lessons/basic_html_v3>
+- 百式管理人(2015)「HTML入門 (全24回)」,<http://dotinstall.com/lessons/basic_html_v3>
+- 百式管理人(2015)「CSS入門 (全23回)」,<http://dotinstall.com/lessons/basic_css_v3>

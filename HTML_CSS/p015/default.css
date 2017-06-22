@@ -1,0 +1,34 @@
+/* 最初の要素 */
+ul li:first-child{
+    color: blue;
+}
+
+/* 最後の要素（たぶん）（補完がそういっている） */
+ul li:last-child{
+    color: red;
+}
+
+/* 未訪問リンク */
+a:link{
+    background-color: yellowgreen;
+}
+
+/* 訪問済みリンク */
+a:visited{
+    background-color: yellow;
+}
+
+/* リンクにマウスが載ったとき */
+a:hover{
+    color: pink;
+}
+
+/* リンクが押されたとき */
+a:active{
+    color: red;
+}
+
+/* 要素がフォーカスされたとき */
+input:focus{
+    background: purple;
+}

@@ -1,0 +1,32 @@
+*{
+    background-color: skyblue;
+}
+
+/* 両方に適応 */
+h1, p{
+    background-color: white;
+}
+
+/* 前者階層下の後者全て */
+div span{
+    /* div階層下のspan全て */
+    color: brown;
+}
+
+/* 前者階層直下の後者全て */
+div > span{
+    /* div階層直下のspan */
+    color: red;
+}
+
+/* 前者の次にくる後者要素 */
+p + p{
+    /* p要素の次にくるp要素 */
+    color: purple;
+}
+
+/* 前者かつ後者 */
+span.variable{
+    /* p要素のvariableクラス */
+    background-color: yellowgreen;
+}

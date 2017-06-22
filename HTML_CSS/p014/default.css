@@ -1,0 +1,14 @@
+/* title属性のあるaタグ */
+a[title]{
+    color: green;
+}
+
+/* href属性がメディテーションセンターのaタグ */
+a[href="http://blog.livedoor.jp/gandt_tornado/"]{
+    background-color: orangered;
+}
+
+/* class属性にcalcのあるaタグ */
+a[class~="calc"]{
+    background-color: black;
+}
