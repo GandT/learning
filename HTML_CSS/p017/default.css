@@ -1,0 +1,28 @@
+/* 
+# 【詳細度】
+0. !important
+1. style属性
+2. id
+3. 属性・疑似クラス
+4. 要素・疑似要素
+*/
+
+p{
+    color: red;
+}
+
+p.flower{
+    color: green;
+}
+
+p.dance{
+    color: blue;
+}
+
+p#hananomiai{
+    color: yellow;
+}
+
+p{
+    color: white !important;
+}

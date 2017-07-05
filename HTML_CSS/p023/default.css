@@ -1,0 +1,7 @@
+body{
+    background: url("back.png") repeat-y top center fixed;
+}
+
+p{
+    font-size: 50px;
+}

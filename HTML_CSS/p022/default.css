@@ -1,0 +1,15 @@
+.c1{
+    cursor: help;
+}
+
+.c2{
+    cursor: move;
+}
+
+.c3{
+    cursor: pointer;
+}
+
+.c4{
+    cursor: url("icon.png"), auto;
+}

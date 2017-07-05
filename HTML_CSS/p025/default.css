@@ -1,0 +1,24 @@
+
+.table{
+    display: table;
+}
+.box{
+    display: table-cell;
+    width: 100px;
+}
+.row{
+    display: table-row;
+}
+
+
+.red{
+    background: red;
+}
+
+.green{
+    background: green;
+}
+
+.blue{
+    background: blue;
+}

@@ -1,0 +1,17 @@
+/* 最初の行・文字に関する処理 */
+p::first-line{
+    color: red;
+}
+
+p::first-letter{
+    color: blue;
+}
+
+/* 要素の前後に文字列を付加 */
+p::before{
+    content: "（拝啓）";
+}
+
+p::after{
+    content: "（敬具）"
+}

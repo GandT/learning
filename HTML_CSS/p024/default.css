@@ -1,0 +1,11 @@
+h1, p, span, a{
+    border: 1px solid #ddd;
+}
+
+p, span{
+    display: block;
+}
+
+span{
+    display: none;
+}

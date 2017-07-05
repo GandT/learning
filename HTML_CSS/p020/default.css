@@ -1,0 +1,27 @@
+*{
+    background-color: grey;
+}
+
+p{
+    color: rgb(1,1,1);
+    font-size: 23px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p#1{
+    font-weight: bold;
+}
+
+p#2{
+    text-decoration: line-through underline;
+}
+
+p#3{
+    color: red;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+p#4{
+    text-decoration: underline;
+}

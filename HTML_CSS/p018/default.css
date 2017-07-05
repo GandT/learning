@@ -1,0 +1,20 @@
+body{
+    font-size: 26px;
+    color: blueviolet;
+    background-color: orangered;
+}
+
+h1{
+    font-size: 3em;
+    color: rgb(0,128,0)
+}
+
+h2{
+    font-size: 250%;
+    color: #ff00ff;
+}
+
+p{
+    font-size: 12px;
+    background-color: #f24;
+}
