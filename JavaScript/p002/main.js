@@ -7,3 +7,4 @@ console.log(z);
 console.log(mojiretsu);
 
 // どうもhtmlに日本語を書かずに.jsにだけ日本語を書くと文字化けが発生するようである
+// htmlにcharset="SHIFT_JIS"で治る（というかなんでUTF-8になってたんだよ違うのにあとcharasetじゃなくてcharsetだっつってんだろ）
