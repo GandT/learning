@@ -23,7 +23,10 @@
     * アンケートサイト
 
         一部バグあり。
+- p012
+    * ミニブログ（dotinstall版）
 
  
 # 【参考文献】
 - 掌田津耶野(2016)『Ruby on Rails 5 超入門』秀和システム
+- 百式管理人(2017)「Ruby on Rails 5入門」, <https://dotinstall.com/lessons/basic_rails_v3> 2017年11月3日閲覧

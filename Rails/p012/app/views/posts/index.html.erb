@@ -1,0 +1,16 @@
+<h2>
+    <%= link_to("こけしの産出国", new_post_path, class: "header-menu") %>
+    このページは記事一覧的なやつなのですがなぜいきなりh2からなのかまあ気にしても仕方ないか
+</h2>
+
+<!--  リストだよ～  -->
+<ul>
+    <!-- ここにRubyの命令を埋め込めるのである！ -->
+    <% @posts.each do |post| %>
+    <% #コメントってどうなん？ →いけそう %>
+    <li>
+        <%= link_to(post.title, post_path(post)) %>
+        <%= post.title %>
+    </li>
+    <% end %>
+</ul>
