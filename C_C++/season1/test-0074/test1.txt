@@ -1,0 +1,5 @@
+#ifndef	TEST1_H__
+#define	TEST1_H__
+#include"test2.txt"
+
+#endif

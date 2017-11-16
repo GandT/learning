@@ -1,0 +1,15 @@
+Debug
+
+DxDirectX.h
+DxLib.h
+DxLib.lib
+DxUseCLib.lib
+libjpeg.lib
+libpng.lib
+ogg_static.lib
+vorbis_static.lib
+vorbisfile_static.lib
+ZLIB.LIB
+
+gazoukanri.h
+gazoukanri.cpp
