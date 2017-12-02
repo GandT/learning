@@ -12,3 +12,5 @@ Properties
 *.sdf
 *.suo
 *.user
+
+*.db
