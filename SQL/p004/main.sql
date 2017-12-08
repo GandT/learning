@@ -1,10 +1,11 @@
 /*
-    2017.12.02
+    2017.12.2
     テーブルの編集
 */
 
 -- テーブルの削除
 drop table if exists tweet;
+drop table if exists tweets;
 
 create table if not exists tweet (
     id integer primary key,
