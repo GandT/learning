@@ -58,3 +58,4 @@
 # 【参考文献】
 - 百式管理人(2015)「HTML入門 (全24回)」,<http://dotinstall.com/lessons/basic_html_v3>
 - 百式管理人(2015)「CSS入門 (全23回)」,<http://dotinstall.com/lessons/basic_css_v3>
+- HTMQ「セレクタの種類」, <http://www.htmq.com/csskihon/005.shtml>
