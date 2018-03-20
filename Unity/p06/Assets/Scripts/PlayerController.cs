@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour {
 	float tilt = 4;
 	[SerializeField] Boundary boundary = null;
 
+	float time = 0, shotTime = 0, nextTime = 0.2f;
+
 	[SerializeField] GameObject shot = null;
 	[SerializeField] Transform spawn = null;
 
@@ -24,9 +26,25 @@ public class PlayerController : MonoBehaviour {
 	{
 		// 変数の初期化
 		_rigidbody = GetComponent<Rigidbody>();
+		
 	}
 
 	
+	void Update()
+	{
+		// 時間カウント
+		time += Time.deltaTime;
+
+		// 自機弾発射
+		if (Input.GetButton("Fire1") && time > shotTime) {
+            shotTime = time + nextTime;
+            Instantiate(shot, spawn.position, spawn.rotation);
+
+        }
+		
+	}
+
+
 	// 物理演算処理後に呼び出されるUpdate
 	void FixedUpdate () {
 		// 移動
@@ -43,12 +61,5 @@ public class PlayerController : MonoBehaviour {
 
 		// 機体の傾き
 		_rigidbody.rotation = Quaternion.Euler(0, 0, _rigidbody.velocity.x * -tilt);
-	}
-
-
-	void Update()
-	{
-		// 自機弾発射
-		Instantiate(shot, spawn.position, spawn.rotation);
 	}
 }
