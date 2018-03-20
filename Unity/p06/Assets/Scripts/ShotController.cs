@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotController : MonoBehaviour
-{
+public class ShotController : MonoBehaviour{
+
 	Rigidbody _rigidbody;
 	Transform _transform;
 
