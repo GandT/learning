@@ -17,9 +17,4 @@ public class ShotController : MonoBehaviour{
 		// パラメータ設定
 		_rigidbody.velocity = _transform.forward * speed;
 	}
-
-
-	void Update () {
-		
-	}
 }
