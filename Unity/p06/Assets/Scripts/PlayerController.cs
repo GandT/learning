@@ -12,6 +12,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	Rigidbody _rigidbody;
+	AudioSource _audio;
 
 	float speed = 10;
 	float tilt = 4;
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		// 変数の初期化
 		_rigidbody = GetComponent<Rigidbody>();
-		
+		_audio = GetComponent<AudioSource>();
 	}
 
 	
@@ -40,6 +41,8 @@ public class PlayerController : MonoBehaviour {
             shotTime = time + nextTime;
             Instantiate(shot, spawn.position, spawn.rotation);
 
+			// 効果音
+			_audio.Play();
         }
 		
 	}

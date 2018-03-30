@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -8,11 +9,19 @@ public class GameController : MonoBehaviour {
 
 	Vector3 spawnValues = new Vector3(6, 0, 16);
 	int hazardCount = 10;
+	int score = 0;
 	float spawnWait = 0.5f, startWait = 1, waveWait = 4;
+	bool gameoverFlag, restaretFlag;
+
+	public GUIText scoreText, restartText, gameoverText;
 
 	void Start()
 	{
 		// 初期化
+		score = 0;
+		gameoverFlag = restaretFlag = false;
+		restartText.text =  gameoverText.text = "";
+		UpdateScore();
 
 		// 敵を作成
 		StartCoroutine(SpawnWaves());
@@ -21,7 +30,8 @@ public class GameController : MonoBehaviour {
 
 	void Update()
 	{
-		
+		// コンティニュー
+		if(restaretFlag && Input.GetKeyDown(KeyCode.X)) SceneManager.LoadScene(SceneManager.GetActiveScene ().name);
 	}
 
 
@@ -40,6 +50,35 @@ public class GameController : MonoBehaviour {
 			}
 
 			yield return new WaitForSeconds(waveWait);
+
+			// ゲームオーバー時処理
+			if(gameoverFlag) {
+				restartText.text = "Press 'X' for restart.";
+				restaretFlag = true;
+				break;
+			}
 		}
+	}
+
+
+	void UpdateScore()
+	{
+		scoreText.text = "Score: " + score;
+	}
+
+
+	public void AddScore(int additonalScoreValue)
+	{
+		// スコアの加算
+		score += additonalScoreValue;
+
+		// 表示更新
+		UpdateScore();
+	}
+
+	public void Gameover()
+	{
+		gameoverText.text = "Game Over";
+		gameoverFlag = true;
 	}
 }

@@ -8,11 +8,19 @@ public class HitManager : MonoBehaviour {
 
 	[SerializeField] GameObject explosion = null;
 	[SerializeField] GameObject playerExplosion = null;
+	[SerializeField] int scoreValue = 100;
 
+	GameController gameController = null;
+	
 
 	void Start()
 	{
 		_transform = GetComponent<Transform>();
+
+		// GameControllerへの参照
+		GameObject gameControllerObject = GameObject.Find("GameController");
+		if(gameControllerObject)gameController = gameControllerObject.GetComponent<GameController>();
+		if(!gameController) Debug.Log("GameControllerへの参照が取得できませんでした。");
 	}
 
 
@@ -24,7 +32,14 @@ public class HitManager : MonoBehaviour {
 
 		// 爆発エフェクトを表示
 		Instantiate(explosion, _transform.position, _transform.rotation);
-		if(other.tag == "Player") Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+		if(other.tag == "Player"){
+			Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+			// ゲームオーバー処理
+			gameController.Gameover();
+		}
+
+		// スコア計算
+		gameController.AddScore(scoreValue);
 
 		// 相手を破壊
 		Destroy(other.gameObject);
