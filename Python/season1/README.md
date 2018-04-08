@@ -1,9 +1,9 @@
-【概要】
+﻿# 【概要】
 Pythonの文法学習。用途は未定。
 
 
 
-【目次】
+# 【目次】
 - p001
 	* print文と日本語コメント
 
@@ -61,13 +61,13 @@ Pythonの文法学習。用途は未定。
 - p050-052
 	* 総和とリスト
 
-- p053-
+- p053-054
 	* クイックソート
 
 
 
 
-【参考文献】
-(発行年不明)「Codecademy」,<https://www.codecademy.com/>
-百式管理人(2013)「ドットインストール」,<http://dotinstall.com/lessons/basic_python_v2>
-田浦健次朗(2017)「プログラミング言語」,<https://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/programming_languages/>
+# 【参考文献】
+- (発行年不明)「Codecademy」,<https://www.codecademy.com/>
+- 百式管理人(2013)「ドットインストール」,<http://dotinstall.com/lessons/basic_python_v2>
+- 田浦健次朗(2017)「プログラミング言語」,<https://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/programming_languages/>
