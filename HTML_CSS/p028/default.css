@@ -1,0 +1,17 @@
+/*
+　2018.4.19
+　要素と流れの切り離しなど
+*/
+
+h1, h2, p, img {
+    border:1px solid #ddd;
+}
+  
+img{
+    float: right;
+    width: 100px;
+}
+
+h2{
+    clear: right;
+}

@@ -1,0 +1,11 @@
+/*
+　2018.4.19
+　行ボックス
+*/
+
+p {
+    border: 1px solid #ddd;
+    font-size: 18px;
+
+    line-height: 4.5;
+ }
