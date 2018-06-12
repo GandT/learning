@@ -56,6 +56,8 @@ Python3系を使用。
 	* NumPyライブラリ
 - p046
 	* pandasライブラリ
+- p047
+	* 情報解析演習
 
 # 【参考文献】
 - 東京大学 数理・情報教育研究センター (2018)「Pythonプログラミング入門 #utpython」,<https://sites.google.com/view/ut-python>
