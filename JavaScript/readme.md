@@ -32,5 +32,5 @@
 
 
 # 【参考文献】
-- 百式管理人「JavaScript入門」, <https://dotinstall.com/lessons/basic_javascript_v2>
+- 田口元(2014)「JavaScript入門」, <https://dotinstall.com/lessons/basic_javascript_v2>
 
