@@ -12,3 +12,5 @@ console.log(l);
 console.log(m);
 console.log(non_var);
 console.log("varなし、やれるけどグローバル変数になるとのこと。スクリプト言語の妙技ですね。　https://www.sejuku.net/blog/27210");
+
+// [読み直し] varなし、やれるけどグローバル変数になるのではなく、スコープ外にすでにあるとそっちが参照されるというだけでは？ http://www.sirochro.com/note/js-var-different/
