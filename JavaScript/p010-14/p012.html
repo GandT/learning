@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+    <title>JavaScript Practice</title>
+    
+    <style>
+        /* body要素内のdivを横並びに */
+        body {
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+        /* 変更前のスタイル */
+        .graph{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            cursor: pointer;
+            transition: 0.8s; /* スタイル変化時のアニメーション時間 */
+            margin: 0 8px 8px 0;
+        }
+
+        /* 変更後のスタイル */
+        .modified{
+            background: pink;
+            border-radius: 20%;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+        <div class="graph" id="obj0"></div>
+        <div class="graph" id="obj1"></div>
+        <div class="graph" id="obj2"></div>
+    
+
+    <script>
+        /*
+            2019.3.7
+            配列と整列
+        */
+
+        'use strict';
+
+        // 操作対象オブジェクトを取得
+        var obj = new Array(3);
+        obj[0] = document.getElementById("obj0");
+        obj[1] = document.getElementById("obj1");
+        obj[2] = document.getElementById("obj2");
+
+        // クリック時処理
+        obj[0].addEventListener("click", function(){ obj[0].classList.toggle("modified"); })
+        obj[1].addEventListener("click", function(){ obj[1].classList.toggle("modified"); })
+        obj[2].addEventListener("click", function(){ obj[2].classList.toggle("modified"); })
+    </script>
+</body>
+
+</hmtl>

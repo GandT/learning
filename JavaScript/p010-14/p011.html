@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+    <title>JavaScript Practice</title>
+    
+    <style>
+        .graph{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            cursor: pointer;
+            transition: 0.8s; /* スタイル変化時のアニメーション時間 */
+        }
+
+        /* 変更後のスタイル */
+        .modified{
+            background: pink;
+            border-radius: 20%;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="graph" id="main"></div>
+    
+
+    <script>
+        /*
+            2019.3.7
+            CSS制御
+        */
+
+        'use strict';
+
+        // 操作対象オブジェクトを取得（定数）
+        const main_obj = document.getElementById("main")
+
+        // クリック時処理
+        main_obj.addEventListener(
+                "click",
+                function(){
+                    // add : クラスを付与
+                    // toggle : クラスをつけたり外したり
+                    main_obj.classList.toggle("modified");
+                }
+            )
+    </script>
+</body>
+
+</hmtl>

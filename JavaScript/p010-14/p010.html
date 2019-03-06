@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+    <title>JavaScript Practice</title>
+    
+    <style>
+        .graph{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="graph" id="main"></div>
+    
+
+    <script>
+        /*
+            2019.3.5
+            getElementByIdとaddEventListener
+        */
+
+        // エラーチェックを厳格に行う（？）
+        'use strict';
+
+        // クリック時処理
+        document                        // このHTMLファイル
+            .getElementById("main")     // id: main の要素を取得
+            .addEventListener(          // タイミングに応じて関数を呼び出す
+                "click",                    // クリック時
+                function(){                 // 呼び出す関数（無記名関数）
+                    document.getElementById("main").style.background = "pink";  //背景色をピンクに変更
+                    document.getElementById("main").style.borderRadius = "50%"; //半径50%
+                }
+            )
+        // ダブルクリック時処理
+        document.getElementById("main").addEventListener("dblclick", function(){
+            document.getElementById("main").style.background = "aquamarine"
+            document.getElementById("main").style.borderRadius = "100%";
+        })
+        // マウスオーバー時処理
+        document.getElementById("main").addEventListener("mousemove", function(){
+            document.getElementById("main").style.background = "blue"
+        })
+    </script>
+</body>
+
+</hmtl>

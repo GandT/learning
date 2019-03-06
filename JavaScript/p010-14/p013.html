@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+    <title>JavaScript Practice</title>
+    
+    <style>
+        /* body要素内のdivを横並びに */
+        body {
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+        /* 変更前のスタイル */
+        .graph{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            cursor: pointer;
+            transition: 0.8s; /* スタイル変化時のアニメーション時間 */
+            
+            margin: 0 8px 8px 0;
+
+            text-align: center;
+            line-height: 100px;
+        }
+
+        /* 変更後のスタイル */
+        .modified{
+            background: pink;
+            border-radius: 20%;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        /*
+            2019.3.7
+            HTML要素の自動生成
+        */
+
+        'use strict';
+
+        // 10回ループ
+        for(let i = 0; i < 50; ++i){
+            // 要素の生成
+            const div = document.createElement("div");
+
+            // クラスの追加
+            div.classList.add("graph");
+
+            // テキストの追加
+            div.textContent = i + "様";
+
+            // イベントの追加
+            div.addEventListener("click", function(){ div.classList.toggle("modified"); });
+
+            // body直下にdivを配置
+            document.body.appendChild(div);
+        }
+
+    </script>
+</body>
+
+</hmtl>
