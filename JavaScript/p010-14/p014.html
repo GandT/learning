@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+    <title>JavaScript Practice</title>
+    
+    <style>
+        #game {
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+        .graph{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            cursor: pointer;
+            transition: 0.8s; /* スタイル変化時のアニメーション時間 */
+            
+            margin: 0 8px 8px 0;
+
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .win{
+            background: pink;
+            border-radius: 20%;
+            transform: rotate(360deg);
+        }
+        .lose{
+            transform: scale(0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="game"></div>
+
+    <script>
+        /*
+            2019.3.7
+            超能力開発ゲーム
+        */
+
+        'use strict';
+
+        // 箱の数
+        const box_num = 5;
+        // 正解：[0, boxnum) の乱数
+        const correct = Math.floor( Math.random() * box_num );
+
+        for(let i = 0; i < box_num; ++i){
+            const div = document.createElement("div");
+            div.classList.add("graph");
+            
+            // 正解
+            if(i === correct){
+                div.dataset.result = "win";
+            }
+            // 不正解
+            else{
+                div.dataset.result = "lose";
+            }
+
+            div.addEventListener("click", function(){ 
+                if(div.dataset.result === "win"){
+                    div.textContent = "正解！"
+                    div.classList.add("win");
+                }else{
+                    div.textContent = "不正解"
+                    div.classList.add("lose");
+                }
+
+            });
+
+            // 表示
+            document.getElementById("game").appendChild(div);
+        }
+
+    </script>
+</body>
+
+</hmtl>
