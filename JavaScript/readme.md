@@ -36,5 +36,5 @@
 
 
 # 【参考文献】
-- 田口元(2014)「JavaScript入門」, <https://dotinstall.com/lessons/basic_javascript_v2>
-
+- 田口元(2014)「【旧版】JavaScript基礎文法徹底マスター」, <https://dotinstall.com/lessons/basic_javascript_v2>
+- 田口元(2018)「はじめてのJavaScript 」, <https://dotinstall.com/lessons/basic_javascript_v3>
