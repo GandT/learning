@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript Practice</title>
+</head>
+<body>
+    <p>今回からJavaScript直接記述</p>
+    <script>
+        /*
+            2019.3.12
+            関数・無記名関数・即時関数
+        */
+
+        function alert_information(first, second = 2){
+            alert("information: " + first + second);
+        }
+
+        let alert_nocomment = function(){
+            alert("!!!");
+        };
+
+        alert_information("iPad");
+        alert_nocomment();
+
+        (function finish(){
+            confirm("fin.");
+        })();
+
+    </script>
+</body>
+</hmtl>
