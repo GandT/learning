@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript Practice</title>
+</head>
+<body>
+    <p>2019.3.13</p>
+    <p>タイマー処理</p>
+
+    <script>
+        // カウンター 
+        let counter = 0;
+
+
+        function countup()
+        {
+            // カウント
+            ++counter;
+
+            // 表示
+            console.log(counter);
+        }
+
+        function show_alert()
+        {
+            alert("尾てい骨");
+        }
+
+        // 定期実行
+        let tid = setInterval(countup, 1000);
+        // if(tid > 12)clearTimeout(tid); // この使い方では止まらない
+
+        // 一時実行
+        setTimeout(show_alert, 2000);
+
+    </script>
+</body>
+</hmtl>

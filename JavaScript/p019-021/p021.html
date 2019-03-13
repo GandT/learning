@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript入門 → 【旧版】JavaScript基礎文法徹底マスター</title>
+</head>
+<body>
+    <p>2019.3.13</p>
+    <p>組み込みオブジェクト</p>
+
+    <script>
+        // Stringオブジェクト
+        let str = new String("国家機関");
+        console.log("【" + str +  "】");
+        console.log(str.length);
+        console.log(str.replace("国", "國"));
+        str = "国家安全保障条約";
+        console.log("【" + str +  "】");
+        console.log(str.length);
+        console.log(str.substr(2, 4));
+
+        console.log("----------------------------");
+
+        // Arrayオブジェクト
+        let array = new Array(1, 1, 2, 3, 5, 8, 13, "フ　ィ　ボ　ナ　ッ　チ　数　列");
+        console.log(array);
+        array.unshift(0);
+        console.log(array);
+        array.shift(2);      // 引数に何を書いても除去されるのは先頭の1要素のみ
+        console.log(array);
+        array.splice(3, 0, "noise", "noise", "noise");
+        console.log(array);        
+
+        console.log("----------------------------");
+
+        // Mathオブジェクト
+        console.log(Math.PI);
+        console.log(Math.cos(3.14));
+        console.log(Math.random());
+
+        console.log("----------------------------");
+
+        // Dateオブジェクト
+        date = new Date();
+        console.log(date.getFullYear());
+        console.log(date.getMonth());     // 何故か月は0〜11
+        console.log(date.getDate());      // そして何故か日付はそのまま
+        console.log(date.getTime());      // 1970/1/1 0:00 からの経過秒数×1000
+
+
+    </script>
+</body>
+</hmtl>
