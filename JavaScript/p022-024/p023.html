@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript入門 → 【旧版】JavaScript基礎文法徹底マスター</title>
+</head>
+<body>
+    <p>2019.3.14</p>
+    <p>Document Object Model (DOM)</p>
+
+    <article>
+        <h1>本体</h1>
+        <p id="content">コンテンツ</p>
+
+    </article>
+
+    <script>
+        function main(){
+            // window.document == document : 現在表示されているページを示すオブジェクト
+            dom = window.document.getElementById("content");
+
+            // テキスト書き換え
+            dom.textContent = "書き換えられた内容";
+            
+            // スタイル変更
+            dom.style.color = "red";
+        }
+
+        function additional(){
+            let add_elem_p = document.createElement("p"),
+                add_text = document.createTextNode("加算されている文章");
+
+            // 要素を接続
+            document.body.appendChild(add_elem_p).appendChild(add_text);
+        }
+
+        // 3秒後にmain関数を呼び出す
+        setTimeout(main, 3000);
+        // 5秒後にadditional関数を呼び出す
+        setTimeout(additional, 5000);
+
+    </script>
+</body>
+</hmtl>

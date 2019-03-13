@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript入門 → 【旧版】JavaScript基礎文法徹底マスター</title>
+</head>
+<body>
+    <p>2019.3.14</p>
+    <p>イベントの設定</p>
+
+    <article>
+        <h1>本体</h1>
+        <p id="content">コンテンツ</p>
+        <button id="button">ボタンに表示される文字</button>
+    </article>
+
+    <script>
+        function main(){
+            let p_elem = document.createElement("p"),
+                p_text = document.createTextNode("都度付与されるテキスト存在");
+
+            document.body.appendChild(p_elem).appendChild(p_text);
+        }
+
+        // ボタンが押されたときにmainを実行
+        document.getElementById("button").addEventListener("click", main);
+    </script>
+</body>
+</hmtl>
