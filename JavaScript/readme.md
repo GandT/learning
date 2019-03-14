@@ -33,7 +33,7 @@
 - p015
     * ポップアップウィンドウ関数
 - p016
-    * 関数
+    * 関数の作成
         + 関数
         + 無記名関数
         + 即時関数
@@ -48,9 +48,13 @@
         + windowオブジェクト
         + documentオブジェクトの書き換え
         + イベントの設定
-
+- p025
+    * 文字列への変数の埋め込み
+- p026
+    * 様々な関数作成
 
 
 # 【参考文献】
 - 田口元(2014)「【旧版】JavaScript基礎文法徹底マスター」, <https://dotinstall.com/lessons/basic_javascript_v2>
-- 田口元(2018)「はじめてのJavaScript 」, <https://dotinstall.com/lessons/basic_javascript_v3>
+- 田口元(2018)「はじめてのJavaScript」, <https://dotinstall.com/lessons/basic_javascript_v3>
+- 田口元(2019)「詳解JavaScript 基礎文法編」, <https://dotinstall.com/lessons/basic_javascript_grammer>
