@@ -58,3 +58,4 @@
 - 田口元(2014)「【旧版】JavaScript基礎文法徹底マスター」, <https://dotinstall.com/lessons/basic_javascript_v2>
 - 田口元(2018)「はじめてのJavaScript」, <https://dotinstall.com/lessons/basic_javascript_v3>
 - 田口元(2019)「詳解JavaScript 基礎文法編」, <https://dotinstall.com/lessons/basic_javascript_grammer>
+- 田口元(2019)「詳解JavaScript オブジェクト編」, <https://dotinstall.com/lessons/basic_javascript_objects>
