@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>詳解JavaScript オブジェクト編</title>
+</head>
+<body>
+    <p>2019.3.19</p>
+    <p>forEach</p>
+
+    <script>
+        "use strict";
+
+        const array = [10, 20, 30, 40, "多元多次方程式"];
+        
+        // Rubyにおけるeach / each_with_indexに相当
+        array.forEach( i => {
+            console.log(i);
+        });
+        array.forEach( (elem, i) => {
+            console.log(`${i}要素 : ${elem}`);
+        })
+    </script>
+</body>
+</hmtl>

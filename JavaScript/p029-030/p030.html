@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>詳解JavaScript オブジェクト編</title>
+</head>
+<body>
+    <p>2019.3.19</p>
+    <p>map / filter</p>
+    <p>参考文献：<a href="https://qiita.com/south37/items/c8d20a069fcbfe4fce85">JavaScriptの「型」の判定について</a></p>
+
+    <script>
+        "use strict";
+
+        const array = [10, 20, 30, 41, "多元多次方程式"];
+
+        // map : 全要素操作
+        const new1 = array.map( elem => elem+elem );
+        // filter : 全要素判定
+        const new2 = array.filter( elem => typeof elem === 'number' && !(elem % 2) );
+
+        console.log(array);
+        console.log(new1);
+        console.log(new2);
+        
+    </script>
+</body>
+</hmtl>
