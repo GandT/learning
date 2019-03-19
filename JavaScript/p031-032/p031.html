@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>詳解JavaScript オブジェクト編</title>
+</head>
+<body>
+    <p>2019.3.19</p>
+    <p>スプレッド演算子</p>
+
+    <script>
+        "use strict";
+
+        // 配列利用
+        let source = [1,2,"基本",3,4,"保証"];
+        let destination = [-10, -20, ...source, -30, -40];
+
+        console.log(destination);
+
+        // オブジェクト利用
+        source = {first: 1, second: 2};
+        destination = {...source, third: 13, fourth: 24};
+
+        console.log(destination);
+
+        // 引数への利用（タプル化）
+        const add = (a, b) => a + b;
+        const operand = [1,238732];
+
+        console.log(add(...operand));
+
+        </script>
+</body>
+</hmtl>

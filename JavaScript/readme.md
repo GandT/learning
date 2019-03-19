@@ -58,8 +58,10 @@
     * イテレータ利用風メソッド
         + forEach
         + map / filter
-
-
+- p031-032
+    * タプル風機能群
+        + スプレッド演算子
+        + 分割代入
 
 # 【参考文献】
 - 田口元(2014)「【旧版】JavaScript基礎文法徹底マスター」, <https://dotinstall.com/lessons/basic_javascript_v2>

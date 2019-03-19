@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>詳解JavaScript オブジェクト編</title>
+</head>
+<body>
+    <p>2019.3.19</p>
+    <p>分割代入と可変長引数的行為</p>
+
+    <script>
+        "use strict";
+    
+        const source = [10, 2214, "国民の生存", "歩行している人物", "右隣にいるタイヤ", "処置"];
+        const [id, score, ...destination] = source;
+
+        console.log(id);
+        console.log(score);
+        console.log(destination);
+        
+    </script>
+</body>
+</hmtl>
