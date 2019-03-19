@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>詳解JavaScript オブジェクト編</title>
+</head>
+<body>
+    <p>2019.3.20</p>
+    <p>例外処理</p>
+
+    <script>
+        "use strict";
+
+        // Ruby       : begin -> rescue
+        // JavaScript : try   -> catch
+        // C++/C#     : try   -> catch
+
+        const str = 77777;
+
+        try{
+            const result = str.toUpperCase();
+            console.log(result);
+        }catch(e){
+            console.log(e.message);
+            console.log(`str type : ${typeof str}`);
+        }
+
+        console.log("終了の儀");
+
+    </script>
+</body>
+</hmtl>
