@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>詳解JavaScript オブジェクト編 </title>
+</head>
+<body>
+    <p>2019.3.19</p>
+    <p>クラスの継承</p>
+
+    <script>
+        "use strict";
+
+        // 親クラス：一時クラス
+        class Tmp
+        {
+            // コンストラクタ
+            constructor(master, submission){
+                this.master = master;
+                this.submission = submission;
+            }
+
+            showConsole()
+            {
+                console.log(`master: ${this.master}\tsubmission: ${this.submission}`);
+            }
+        };
+
+        // 子クラス：算術一時クラス
+        class TmpArithmetic extends Tmp
+        {
+            constructor(master, submission, intelligence)
+            {
+                // 親クラスのコンストラクタ呼び出し（C++と違い自動発生はしない）（ちなみにRubyも同様とのこと）
+                super(master, submission);
+
+                // それ以外の初期化
+                this.intelligence = intelligence;
+            }
+
+            escutcheon()
+            {
+                // 半角カタカナ表示も問題なし
+                for(let i = 0 ; i< 10 ; ++i)alert("ﾀﾁｻﾚ");
+            }
+
+        };
+
+        const ari = new TmpArithmetic("国家機関", 11654, -100);
+        alert(ari);
+        console.log(ari);
+        ari.escutcheon();
+
+
+    </script>
+</body>
+</hmtl>

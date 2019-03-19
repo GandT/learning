@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>詳解JavaScript オブジェクト編 </title>
+</head>
+<body>
+    <p>2019.3.19</p>
+    <p>クラス</p>
+
+    <script>
+        "use strict";
+
+        class Tmp
+        {
+            // コンストラクタ
+            constructor(master, submission){
+                this.master = master;
+                this.submission = submission;
+            }
+
+            // メソッド（＝メンバ関数）
+            show()
+            {
+                return [this.master, this.submission];
+            }
+            showConsole()
+            {
+                console.log(`master: ${this.master}\tsubmission: ${this.submission}`);
+            }
+
+            // クラスメソッド（＝静的メンバ関数）
+            static staticMethod()
+            {
+                alert("static method");
+            }
+        }
+
+        const existence = new Tmp("国家", 161);
+        const vanishment = new Tmp("豊作祈願", 77.612);
+
+        existence.showConsole();
+        vanishment.showConsole();
+
+        console.log(existence.show());
+
+        Tmp.staticMethod();
+
+    </script>
+</body>
+</hmtl>
