@@ -60,6 +60,9 @@ Python3系を使用。
 	* 情報解析演習
 - p048
 	* Flask簡易ページ
+- p049
+	* Flask統計分析アプリ
+	* 配布プログラム改変タイプの学習のためノートのみ
 
 # 【参考文献】
 - 東京大学 数理・情報教育研究センター (2018)「Pythonプログラミング入門 #utpython」,<https://sites.google.com/view/ut-python>
