@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>React Practice</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="main"></div>
+        <script type="text/babel">
+            // ここからJavaScript扱い
+            // これはアロー関数
+            (() => {
+                // これは定数
+                const show_string = "預金残高";
+                const money = 8778775151326;
+                const insemantic_string = "qawsedrftgyhujikolp";
+
+                ReactDOM.render(
+                    // ここはコメント
+                    <div>
+                        <p><b>こ　ん　ば　ん　は　銀　行</b></p>
+                        <p>{show_string} : {money}<br/>{insemantic_string.toUpperCase()}</p>
+                    </div>,
+                     // babelの関係で1要素である必要あり → div囲み
+                    document.getElementById("main")
+                );
+            })();
+        </script>
+    </body>
+</html>

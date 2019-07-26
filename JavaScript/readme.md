@@ -64,9 +64,19 @@
         + 分割代入
 - p033
     * 例外処理
+- p034
+    * React.DOM基本用法
+        + JavaScriptなどの変数・関数使用可能
+        + ReactDOM.render(JSX, 変えたい要素) でDOM内容変更
+            - 出せるのは1要素のみ
+            - divで囲むことで1要素にできる
+- p035
+    * 
+
 
 # 【参考文献】
 - 田口元(2014)「【旧版】JavaScript基礎文法徹底マスター」, <https://dotinstall.com/lessons/basic_javascript_v2>
 - 田口元(2018)「はじめてのJavaScript」, <https://dotinstall.com/lessons/basic_javascript_v3>
 - 田口元(2019)「詳解JavaScript 基礎文法編」, <https://dotinstall.com/lessons/basic_javascript_grammer>
 - 田口元(2019)「詳解JavaScript オブジェクト編」, <https://dotinstall.com/lessons/basic_javascript_objects>
+- 田口元(2019)「React入門」, <https://dotinstall.com/lessons/basic_reactjs>
