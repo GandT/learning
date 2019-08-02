@@ -9,10 +9,25 @@
         <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     </head>
     <body>
+        <p>2019.8.2</p>
+        <p>Reactによるスタイルや関数の付与</p>
         <div id="main"></div>
         <script type="text/babel">
             (() => {
-                
+                let message = () =>
+                {
+                    alert("非常事態宣言が発令されました");
+                }
+
+                ReactDOM.render(
+                    <div>
+                    <div className="siro"></div>
+                    <div style={{width: 100, height: 100, backgroundColor: "tomato"}}></div>
+                    <div style={{width: 100, height: 100, backgroundColor: "skyblue"}} onClick={message}></div>
+                    </div>
+                    ,
+                    document.getElementById("main")
+                )
             })();
         </script>
     </body>

@@ -1,0 +1,27 @@
+body {
+    font-size: 16px;
+}
+  
+.container {
+    width: 330px;
+    margin: 20px auto;
+}
+  
+.container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;  /* 横並びにする */
+    flex-wrap: wrap;  /* 要素が増えたら折り返し */
+}
+  
+.container li {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    cursor: pointer;  /* マウスカーソルを指マークにする */
+    user-select: none;  /* クリックしたときに文字が選択されないようにする */
+    border-radius: 5px;  /* 角を丸める */
+    margin: 0 5px 10px;
+}
