@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>React入門</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+        <p>2019.8.7</p>
+        <p>クラスを用いたReact Component</p>
+
+        <div id="main"></div>
+        
+        <script type="text/babel">
+
+            class Counter extends React.Component{
+                // コンストラクタ（初期化）
+                constructor(props)
+                {
+                    // 親クラス（スーパークラス）のコンストラクタ呼び出し
+                    // （JavaScriptでは手動呼び出しが必要）
+                    super(props);
+
+                    // オブジェクトとしてメンバ変数のstateを設定
+                    this.state = {
+                        count: 10,
+                        hidden_message: "国際法則"
+                    }
+
+                    // メンバ変数にメソッドを割当
+                    this.countUp = this.countUp.bind(this);
+                }
+
+                // カウントアップメソッド（クラスのメンバ変数）
+                countUp()
+                {
+                    // NG : this.state.count += 1;
+                    // setStateメソッドでのみstateを更新可能
+                    this.setState(prevState => {  // 引数prevStateに前状態が入る
+                        return {
+                            count: prevState.count + 1,
+                            hidden_message: prevState.hidden_message
+                        }
+                    });
+                }
+
+                // クラスのメンバメソッド「render()」でコンポーネントの描画が行われる
+                render()
+                {
+                    return(
+                        <li style={{backgroundColor: this.props.color}} onClick={this.countUp}>
+                            {this.state.count}
+                        </li>
+                    );
+                }
+            }
+
+            (() => {
+                ReactDOM.render(
+                    <div className="container">
+                        <ul>
+                            <Counter color="tomato"/>
+                            <Counter color="skyblue"/>
+                            <Counter color="limegreen"/>
+                        </ul>
+                    </div>
+                    ,
+                    document.getElementById("main")
+                )
+            })();
+        </script>
+    </body>
+</html>

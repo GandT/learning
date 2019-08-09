@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>React入門向けカウンターアプリ</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+        <p>2019.8.7</p>
+        <p>React製カウンター</p>
+
+        <div id="main"></div>
+        
+        <script type="text/babel">
+            class Application extends React.Component{
+                
+                constructor()
+                {
+                    super();
+                    
+                    this.state = {
+                        counters: [
+                            {name: "蜂蜜", count: 0,  color: "tomato"},
+                            {name: "金柑", count: 0,  color: "skyblue"},
+                            {name: "喉飴", count: 0,  color: "limegreen"},
+                            {name: "ＶＣ", count: 0,  color: "gray"},
+                            {name: "3000", count: 0,  color: "pink"},
+                        ],
+                        total: 0
+                    }
+
+                    this.countUp = this.countUp.bind(this);
+                }
+
+                // counter : 変更したいcounterと同じデータが入っているのでnameで照合
+                countUp(counter)
+                {
+                    this.setState(prevState => {
+                        // 前状態countersのコピーを作成
+                        const counters = prevState.counters.map( counter => {
+                            return {
+                                name: counter.name, 
+                                count: counter.count,  
+                                color: counter.color
+                            };
+                        });
+
+                        // 更新対象が配列の何番目か調べる
+                        const idx = counters.map( counter => {
+                            return counter.name
+                        }).indexOf(counter.name);
+
+                        // 対象を更新
+                        ++counters[idx].count;
+
+                        // 総数を更新
+                        const total = prevState.total + 1;
+
+                        // 値を反映
+                        return {
+                            counters: counters,
+                            total: total
+                        };
+                    })
+                }
+
+                render()
+                {
+                    return(
+                        <div className="container">
+                            <CounterList
+                                counters={this.state.counters}
+                                countUp={this.countUp}
+                            />
+                            <div>合計 : {this.state.total}</div>
+                        </div>
+                    );
+                }
+            }
+
+            
+            let CounterList = (props) =>
+            {
+                const counters = props.counters.map( counter => {
+                    return(
+                        <Counter
+                            counter={counter}
+                            key={counter.name}
+                            countUp={props.countUp}
+                        />
+                    );
+                });
+
+                return(
+                    <ul>{counters}</ul>
+                );
+            }
+
+            let Counter = (props) =>
+            {
+                return(
+                    <li style={{backgroundColor: props.counter.color}} onClick={() => props.countUp(props.counter)}>
+                        {props.counter.name} : {props.counter.count}
+                    </li>
+                );
+            }
+
+            (() => {
+                ReactDOM.render(
+                    <Application/>
+                    ,
+                    document.getElementById("main")
+                )
+            })();
+        </script>
+    </body>
+</html>
