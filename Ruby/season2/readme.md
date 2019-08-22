@@ -125,7 +125,16 @@
     * クリップボード
 - p153-154
     * 全角文字
-
+- p155-
+    * RSpec基礎
+        + 基本記法
+        + describe / it
+        + matcher
+        + subject
+        + let / let!
+        + double
+        + shared_examples / include_examples
 
 # 【参考文献】
 - 高橋征義,後藤裕蔵(2010)『たのしいRuby　第3版』ソフトバンククリエイティブ
+- 田口元(2017)「RSpec入門」, <https://dotinstall.com/lessons/basic_rspec>
