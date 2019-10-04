@@ -1,0 +1,17 @@
+#coding: UTF-8
+=begin
+　2019.10.4
+　rakeタスクの多重namespace
+
+　【参考文献】
+　abcb2（2018）「ruby rake の使い方」, <https://qiita.com/abcb2/items/9905449ab3fcf5d27ace> 2019年10月4日アクセス
+=end
+
+namespace :sp do
+    namespace :ace do
+        desc '多重namespace'
+        task :hello do
+            puts "This is the week of the 増税."
+        end
+    end
+end

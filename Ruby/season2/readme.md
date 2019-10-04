@@ -125,7 +125,7 @@
     * クリップボード
 - p153-154
     * 全角文字
-- p155-
+- p155-162
     * RSpec基礎
         + 基本記法
         + describe / it
@@ -134,6 +134,8 @@
         + let / let!
         + double
         + shared_examples / include_examples
+- p163
+    * rakeタスクの多重namespace
 
 # 【参考文献】
 - 高橋征義,後藤裕蔵(2010)『たのしいRuby　第3版』ソフトバンククリエイティブ
