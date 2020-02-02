@@ -1,0 +1,8 @@
+<!--
+    2020.2.2
+    ファイルアップロードとプレビュー
+
+    参考文献：https://qiita.com/Ryota-Onuma/items/c3165be6d9c34c9b4074
+-->
+<img id="image">
+<input type="file" onchange="image.src = window.URL.createObjectURL(this.files[0])">
